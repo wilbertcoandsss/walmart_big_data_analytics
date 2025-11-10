@@ -1,0 +1,43 @@
+/* src/components/dashboard/StatsChartCard.module.css */
+
+.cardContainer {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.avgValue {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.chartWrapper {
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.valueLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #a0a0c0;
+    padding: 0 5px; /* Sedikit padding agar sejajar dengan chart */
+}

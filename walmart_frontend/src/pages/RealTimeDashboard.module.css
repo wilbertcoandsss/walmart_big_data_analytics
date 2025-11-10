@@ -1,0 +1,290 @@
+/* src/components/dashboard/RealTimeDashboard.module.css */
+
+.streamContainer {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.header h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.statusDot {
+    width: 12px;
+    height: 12px;
+    background-color: #ff6384; /* Red for disconnected */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.statusDot.connected {
+    background-color: #00C49F; /* Green for connected */
+    box-shadow: 0 0 8px #00C49F;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1.5rem;
+    height: 400px; /* Fixed height for scrollability */
+}
+
+.activityLog {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column-reverse; New messages appear at the top */
+}
+
+.logEntry {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.logDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.logText {
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.logTimestamp {
+    font-size: 0.8rem;
+    color: #a0a0c0;
+    margin-top: 4px;
+}
+
+.onlineUsers {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.onlineUsers h4 {
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.onlineUsers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.onlineUsers li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+}
+
+.onlineDot {
+    width: 10px;
+    height: 10px;
+    background-color: #00C49F;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Tambahkan ini ke bagian bawah file RealTimeDashboard.module.css */
+
+.chatInputContainer {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.chatInput {
+    flex-grow: 1;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.chatInput:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.sendButton {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.sendButton:hover {
+    filter: brightness(1.2);
+}
+
+.sendButton:disabled {
+    background-color: #3e3e5a;
+    cursor: not-allowed;
+}
+
+/* Styling khusus untuk pesan chat */
+.chatHeader {
+    color: #a0a0c0;
+    font-size: 0.8rem;
+}
+
+.chatMessage {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%; /* Memastikan .sidebar mengisi tinggi .mainContent */
+}
+
+/* Penyesuaian .onlineUsers agar bisa berbagi ruang */
+.onlineUsers {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+    flex-shrink: 0; /* Mencegah container ini menyusut */
+}
+
+.onlineUsers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 100px; /* Batasi tinggi agar tidak memakan semua ruang */
+    overflow-y: auto;
+}
+
+/* ✅ GAYA BARU untuk Trending Products */
+.trendingProducts {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+    flex-grow: 1; /* Mengisi sisa ruang di .sidebar */
+}
+
+.trendingProducts h4 {
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Tambahkan ini ke file RealTimeDashboard.module.css Anda */
+
+/* Penyesuaian layout utama */
+.mainContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Log lebih besar, sidebar lebih kecil */
+    gap: 1.5rem;
+    height: 500px; /* Tingkatkan tinggi agar lebih lega */
+}
+
+/* Container baru untuk log dan tab */
+.logSection {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    color: #a0a0c0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tabs button.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Mengganti .activityLog agar mengisi sisa ruang */
+.activityLog {
+    flex-grow: 1; /* Ini penting */
+    background: none; /* Hilangkan background duplikat */
+    padding: 0; /* Hilangkan padding duplikat */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Urutan dari atas ke bawah */
+}
+
+/* Pesan jika log kosong */
+.emptyLog {
+    margin: auto;
+    color: #a0a0c0;
+}
+
+/* Style untuk detail produk di checkout log */
+.productList {
+    list-style: none;
+    padding: 0.5rem 0 0 1rem;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #a0a0c0;
+}

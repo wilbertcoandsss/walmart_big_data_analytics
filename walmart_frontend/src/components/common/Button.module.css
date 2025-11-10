@@ -1,0 +1,49 @@
+/* src/components/common/Button.module.css */
+
+.button {
+  padding: 12px 24px;
+  border-radius: 25px; /* Membuat tepian melengkung */
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Variasi Tombol Utama (Primary) */
+.primary {
+  background-color: var(--accent-color); /* #8884d8 */
+  color: #ffffff;
+}
+
+.primary:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(136, 132, 216, 0.4);
+}
+
+/* Variasi Tombol Sekunder (Secondary) */
+.secondary {
+  background-color: transparent;
+  color: var(--text-color); /* #e0e0e0 */
+  border: 2px solid var(--border-color); /* #4a4a6a */
+}
+
+.secondary:hover {
+  background-color: var(--border-color);
+  color: #ffffff;
+}
+
+/* State saat tombol disabled */
+.button:disabled {
+  background-color: #3e3e5a;
+  color: #7a7a9a;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

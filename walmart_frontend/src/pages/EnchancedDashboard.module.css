@@ -1,0 +1,6 @@
+.statsgrid {
+  display: grid;
+  /* Buat kolom sebanyak mungkin, min. 350px, dan bagi rata ruangnya */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem; /* Jarak antar kartu */
+}

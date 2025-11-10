@@ -1,0 +1,208 @@
+/* src/components/dashboard/GraphAnalytics.module.css */
+.graphContainer {
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: var(--text-color);
+}
+
+.controls {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controls label {
+  font-weight: bold;
+  color: #a0a0c0;
+}
+
+.graphSelect {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.statusMessage, .errorMessage {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.errorMessage {
+  color: #ff8080;
+}
+
+.graphWrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-color); /* Background gelap untuk canvas */
+}
+
+/* Override default vis-network styles if needed */
+.graphWrapper div { /* Target canvas container */
+    border-radius: 8px;
+}
+
+/* Tambahkan ini ke file GraphAnalytics.module.css Anda */
+
+/* ... (semua style sebelumnya tetap sama) ... */
+
+.infoBox {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.infoBox h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.infoBox p {
+    margin: 0.5rem 0;
+    color: #a0a0c0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.infoBox p strong {
+    color: #e0e0e0;
+}
+
+/* Tambahkan atau perbarui gaya ini di GraphAnalytics.module.css */
+
+.controls {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between; /* Posisikan item ke ujung */
+    align-items: center;
+    gap: 1rem;
+}
+
+.controls > div { /* Target container label/select dan toggle */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.viewToggle {
+    display: flex;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 4px;
+}
+
+.viewToggle button {
+    background: none;
+    border: none;
+    color: #a0a0c0;
+    padding: 6px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.viewToggle button.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.contentWrapper {
+    /* Wrapper untuk menampung graph atau tabel */
+}
+
+.tableContainer {
+    max-height: 600px; /* Samakan dengan tinggi graf */
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.resultsTable th, .resultsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.resultsTable thead th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+}
+
+.resultsTable tbody tr:hover {
+    background-color: var(--primary-color);
+}
+
+.topControls {
+    margin-bottom: 1rem; /* Kurangi margin bawah */
+    display: flex;
+    flex-wrap: wrap; /* Agar bisa wrap di layar kecil */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem; /* Tambah padding bawah */
+    border-bottom: 1px solid var(--border-color); /* Garis pemisah */
+}
+
+/* Container untuk select dan view toggle */
+.selectAndView {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem; /* Jarak antar grup kontrol */
+}
+
+.controlGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Container untuk tombol projection */
+.projectionControls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Penyesuaian ukuran tombol jika perlu (tambahkan prop 'size' ke komponen Button) */
+/* Contoh di komponen Button.jsx: className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`} */
+/* Contoh CSS:
+.small { padding: 8px 16px; font-size: 0.9rem; }
+*/
+
+/* Status message bisa digunakan untuk projection status juga */
+.statusMessage {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #a0a0c0;
+}
+
+.errorMessage { /* Sudah ada sebelumnya */
+    color: #ff8080;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}

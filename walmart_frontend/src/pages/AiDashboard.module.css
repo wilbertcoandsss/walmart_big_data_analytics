@@ -1,0 +1,243 @@
+/* src/pages/AIDashboard.module.css */
+
+.sectionDescription {
+    color: #a0a0c0;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.predictionContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.predictionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #a0a0c0;
+}
+
+.inputGroup input {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.resultArea {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 200px;
+}
+
+.resultArea h4 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.resultCard {
+    padding: 1rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+    text-align: left;
+}
+
+.predictionLabel, .confidenceLabel {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.predictionValue, .confidenceValue {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.resultCard.churn {
+    background-color: rgba(255, 99, 132, 0.2);
+    border: 1px solid rgba(255, 99, 132, 1);
+}
+
+.resultCard.churn .predictionValue {
+    color: rgba(255, 99, 132, 1);
+}
+
+.resultCard.noChurn {
+    background-color: rgba(0, 196, 159, 0.2);
+    border: 1px solid rgba(0, 196, 159, 1);
+}
+
+.resultCard.noChurn .predictionValue {
+    color: rgba(0, 196, 159, 1);
+}
+
+.errorText {
+    color: #ff8080;
+}
+
+/* src/pages/AIDashboard.module.css */
+
+.sectionDescription {
+    color: #a0a0c0;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.predictionContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Form takes 1 part, results take 2 parts */
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.predictionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #a0a0c0;
+}
+
+.inputGroup input {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.resultArea {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.resultArea h4 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ✅ NEW: Grid for multiple model results */
+.predictionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* ✅ NEW: Styling for individual model result cards */
+.modelResultCard {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.modelResultCard:hover {
+    transform: translateY(-3px);
+}
+
+.modelTitle {
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.resultRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.resultLabel {
+    font-size: 0.8rem;
+    color: #a0a0c0;
+}
+
+.resultValue {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.modelResultCard.churn {
+    border-left: 5px solid rgba(255, 99, 132, 1);
+}
+
+.modelResultCard.churn .resultValue {
+    color: rgba(255, 99, 132, 1);
+}
+
+.modelResultCard.noChurn {
+    border-left: 5px solid rgba(0, 196, 159, 1);
+}
+
+.modelResultCard.noChurn .resultValue {
+    color: rgba(0, 196, 159, 1);
+}
+
+.errorText {
+    color: #ff8080;
+}
